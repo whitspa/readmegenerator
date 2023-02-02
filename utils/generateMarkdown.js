@@ -1,12 +1,12 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {if (value === "GNU AGPLv3") {
+function renderLicenseBadge(license) {if (license === "GNU AGPLv3") {
   return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)]";
-  }  else if (value === "Mozilla") {
+  }  else if (license === "Mozilla") {
   return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]";
-  } else if (value === "MIT") {
+  } else if (license === "MIT") {
   return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
-  } else if (value === "Apache") {
+  } else if (license === "Apache") {
   return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
   } else {
   return "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)]";
@@ -15,13 +15,13 @@ function renderLicenseBadge(license) {if (value === "GNU AGPLv3") {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {if (value === "GNU AGPLv3") {
+function renderLicenseLink(license) {if (license === "GNU AGPLv3") {
   return "[![License: AGPL v3]](https://www.gnu.org/licenses/agpl-3.0)";
-  }  else if (value === "Mozilla") {
+  }  else if (license === "Mozilla") {
   return "[![License: MPL 2.0]](https://opensource.org/licenses/MPL-2.0)";
-  } else if (value === "MIT") {
+  } else if (license === "MIT") {
   return "[![License: MIT]](https://opensource.org/licenses/MIT)";
-  } else if (value === "Apache") {
+  } else if (license === "Apache") {
   return "[![License]](https://opensource.org/licenses/Apache-2.0)";
   } else {
   return "[![License]](https://www.boost.org/LICENSE_1_0.txt)";
@@ -36,7 +36,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
 
-  ${data.licenseBadge}
+  ${renderLicenseBadge(data.license)}
 
 
   ## Description:
@@ -74,8 +74,7 @@ function generateMarkdown(data) {
   ## License
   
   License used for this project - ${data.license}
-  
-
+  ${renderLicenseLink(data.license)}
   
   ---
   
@@ -114,4 +113,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown

@@ -4,6 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
+function init() {
 inquirer
 .prompt([
     {
@@ -24,17 +25,17 @@ inquirer
     {
         type: "input",
         message: "Please enter the usage information for your project",
-        name: "iusage",
+        name: "usage",
     },
     {
         type: "input",
-        message: "Please enter the contribution guidelines for your project",
-        name: "contribution",
+        message: "Please enter the guidelines for contributing to your project",
+        name: "contributing",
     },
     {
         type: "input",
-        message: "What are the test instructions for your project?",
-        name: "test",
+        message: "What are the instructions for code tests in your project?",
+        name: "tests",
     },
     {
         type: "list",
@@ -42,8 +43,6 @@ inquirer
         message: "Please select the license you used for this project.",
         choices: [
         "GNU AGPLv3",
-        "GNU GPLv2",
-        "GNU LGPLv2.1",
         "Mozilla",
         "MIT",
         "Apache",
@@ -57,9 +56,9 @@ inquirer
     },
     {
         type: "input",
-        message: "What is the link to your Github profile page?",
         name: "profileLink",
-        },
+        message: "What is the link to your Github profile page?",
+     },
     {
         type: "input",
         name: "userEmail",
@@ -78,7 +77,7 @@ inquirer
 // function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+}
 
 // Function call to initialize app
 init();
